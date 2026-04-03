@@ -1,29 +1,3 @@
-    // 1. Get the input amount
-    //let amount = document.querySelector("#amount").value;
-
-    // 2. Get the selected "From" and "To" values (using .value)
-    //let from = document.getElementById("#from").value;
-    //let to = document.getElementById("#to").value;
-
-    // Fixed your console logs (using 'from' and 'to' instead of 'fromCurrency')
-    //console.log("From:", from);
-    //console.log("To:", to);
-
-    // 3. Rate object with 20 countries (Base: 1 USD)
-    //let rate = {
-        //USD: 1,      INR: 83.3,   EUR: 0.92,   GBP: 0.79,   JPY: 151.4,
-        //AUD: 1.52,   CAD: 1.35,   SGD: 1.34,   CHF: 0.90,   CNY: 7.23,
-      //  HKD: 7.82,   NZD: 1.66,   BRL: 5.06,   RUB: 92.4,   ZAR: 18.9,
-    //    MXN: 16.6,   PHP: 56.1,   THB: 36.4,   SAR: 3.75,   AED: 3.67
-    
-    //}
-    // 4. Calculate the result
-    // Logic: (Amount / Source Rate) * Target Rate
-    //let result = (amount / rate[from]) * rate[to];
-
-    // 5. Display the result
-   //let resultl= document.querySelector("#resultText").innerText = 
-     //   `${amount} is converted from ${from} to ${to} :${result}`;
     function con(){
     let amount=document.querySelector("#amount").value;
     console.log(amount);
