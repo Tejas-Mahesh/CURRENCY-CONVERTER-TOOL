@@ -14,7 +14,7 @@
     flex-wrap: wrap; /* Makes it responsive */
 }
 
-.field { flex: 1; min-width: 100px; }
+.field { flex: 1; min-width: 150px; }
 
 select, input {
     width: 100%;
