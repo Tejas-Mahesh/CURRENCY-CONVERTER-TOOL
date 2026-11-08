@@ -4,86 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="converter-card">
-        <div class="card-header">
+    <main class="converter-card">
+        <header class="card-header">
+            <div class="icon-badge">
+                <i class="fa-solid fa-coins"></i>
+            </div>
             <h2>Currency Converter</h2>
-            <p>Get instant live conversion rates</p>
-        </div>
+            <p>Real-time FX rates & instant calculation</p>
+        </header>
 
-        <div class="input-group">
-            <label for="amount">Enter Amount</label>
-            <input type="number" id="amount" placeholder="e.g. 100" min="0" value="1">
-        </div>
-        
-        <div class="dropdown-group">
-            <div class="field">
-                <label for="from">From</label>
-                <select id="from">
-                    <option value="USD" selected>USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SEK">SEK - Swedish Krona</option>
-                    <option value="NZD">NZD - New Zealand Dollar</option>
-                    <option value="MXN">MXN - Mexican Peso</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                    <option value="HKD">HKD - Hong Kong Dollar</option>
-                    <option value="NOK">NOK - Norwegian Krone</option>
-                    <option value="KRW">KRW - South Korean Won</option>
-                    <option value="TRY">TRY - Turkish Lira</option>
-                    <option value="INR">INR - Indian Rupee</option>
-                    <option value="RUB">RUB - Russian Ruble</option>
-                    <option value="BRL">BRL - Brazilian Real</option>
-                    <option value="ZAR">ZAR - South African Rand</option>
-                </select>
+        <form id="converterForm" onsubmit="return false;">
+            <div class="input-group">
+                <label for="amount">Enter Amount</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol">$</span>
+                    <input type="number" id="amount" placeholder="0.00" min="0" step="any" value="1" required>
+                </div>
             </div>
 
-            <button type="button" class="swap-btn" id="swapBtn" title="Swap currencies">&#8644;</button>
+            <div class="dropdown-group">
+                <div class="field">
+                    <label for="from">From</label>
+                    <div class="select-wrapper">
+                        <select id="from">
+                            <option value="USD" selected>USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="SGD">SGD - Singapore Dollar</option>
+                            <option value="AED">AED - UAE Dirham</option>
+                        </select>
+                    </div>
+                </div>
 
-            <div class="field">
-                <label for="to">To</label>
-                <select id="to">
-                    <option value="INR" selected>INR - Indian Rupee</option>
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="CHF">CHF - Swiss Franc</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="SEK">SEK - Swedish Krona</option>
-                    <option value="NZD">NZD - New Zealand Dollar</option>
-                    <option value="MXN">MXN - Mexican Peso</option>
-                    <option value="SGD">SGD - Singapore Dollar</option>
-                    <option value="HKD">HKD - Hong Kong Dollar</option>
-                    <option value="NOK">NOK - Norwegian Krone</option>
-                    <option value="KRW">KRW - South Korean Won</option>
-                    <option value="TRY">TRY - Turkish Lira</option>
-                    <option value="RUB">RUB - Russian Ruble</option>
-                    <option value="BRL">BRL - Brazilian Real</option>
-                    <option value="ZAR">ZAR - South African Rand</option>
-                </select>
+                <button type="button" class="swap-btn" id="swapBtn" aria-label="Swap Currencies" title="Swap currencies">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </button>
+
+                <div class="field">
+                    <label for="to">To</label>
+                    <div class="select-wrapper">
+                        <select id="to">
+                            <option value="INR" selected>INR - Indian Rupee</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="SGD">SGD - Singapore Dollar</option>
+                            <option value="AED">AED - UAE Dirham</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <button id="convertBtn">Convert</button>
+
+            <button type="submit" id="convertBtn">
+                <span>Convert</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </form>
 
         <div class="result-box" id="resultBox">
             <span class="result-label">Converted Amount</span>
-            <p id="resultText">1 USD = 93.79 INR</p>
+            <div class="result-value" id="resultText">1 USD = 93.79 INR</div>
+            <span class="rate-info" id="rateInfo">1 USD ≈ 93.79 INR</span>
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
